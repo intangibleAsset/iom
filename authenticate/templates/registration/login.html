@@ -1,0 +1,34 @@
+{% extends "authenticate/base.html" %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+<!-- login section start -->
+<div class="w3-container w3-center">
+
+  <div class="w3-text-red">
+    {% if form.errors %}
+      <p>Incorrect username or password</p>
+    {% endif %}
+    {% if next %}
+      <p>You are not authorised to access that page.</p>
+    {% endif %}
+  </div>
+
+  <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    <p>Username</p>
+    <p>{{ form.username }}</p>
+    <p>Password</p>
+    <p>{{ form.password }}</P>
+
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+
+</div>
+<!-- login section finish -->
+{% endblock %}

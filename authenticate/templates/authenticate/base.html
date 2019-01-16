@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Page title -->
+    {% block title %}
+    {% endblock %}
+    <!-- CCS library imports -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authenticate/w3.css' %}" type="text/css">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="w3-bar w3-light-grey w3-border">
+      <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-mobile">Home</a>
+      <span class="w3-right">
+      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 3</a>
+      <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Quick search..">
+      <button class="w3-bar-item w3-button w3-blue w3-mobile">Go</button>
+      </span>
+    </div>
+    <!-- Navbar end -->
+
+    <!-- Login alert -->
+    
+    <!-- Login alert end -->
+
+    <!-- Page content -->
+    {% block content %}
+    {% endblock %}
+    <!-- Page content end -->
+  </body>
+</html>
