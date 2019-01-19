@@ -25,7 +25,13 @@
     <!-- Navbar end -->
 
     <!-- Login alert -->
-    
+    <div class="w3-right">
+      {% if user.is_authenticated %}
+      <p class="w3-padding-small">Logged in as: {{ user.username }} | <a href="{% url 'logout'%}">Logout</a></p>
+      {% else %}
+      <p class="w3-padding-small">You're not logged in: <a href="{% url 'login' %}">Login</a></p>
+      {% endif %}
+    </div>
     <!-- Login alert end -->
 
     <!-- Page content -->
