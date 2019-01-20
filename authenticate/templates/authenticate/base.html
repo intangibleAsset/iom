@@ -16,34 +16,34 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark p-1">
       <!-- Brand/logo -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'index'%}">
         <img src="{% static 'authenticate/iom_crest.png' %}" alt="logo" style="width:40px;">
       </a>
 
       <!-- Links -->
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link 1</a>
+          <a class="nav-link" href="#">My shifts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link 2</a>
+          <a class="nav-link" href="#">Overtime</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link 3</a>
+          <a class="nav-link" href="#">Section shifts</a>
         </li>
       </ul>
     </nav>
      <!--Navbar end -->
 
     <!-- Login alert -->
-    <div>
-      {% if user.is_authenticated %}
-      <p>Logged in as: {{ user.username }} | <a href="{% url 'logout'%}">Logout</a></p>
-      {% else %}
-      <p>You're not logged in: <a href="{% url 'login' %}">Login</a></p>
-      {% endif %}
+    <div class="pr-1">
+        {% if user.is_authenticated %}
+        <p class="text-right m-0">Logged in as: {{ user.username }} | <a href="{% url 'logout'%}">Logout</a></p>
+        {% else %}
+        <p class="text-right m-0">You're not logged in: <a href="{% url 'login' %}">Login</a></p>
+        {% endif %}
     </div>
     <!-- Login alert end -->
 
