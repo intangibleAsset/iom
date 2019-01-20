@@ -7,29 +7,42 @@
     {% endblock %}
     <!-- CCS library imports -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'authenticate/w3.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'authenticate/bootstrap.min.css' %}">
+    <script src="{% static 'authenticate/jquery.min.js' %}"></script>
+    <script src="{% static 'authenticate/popper.min.js' %}"></script>
+    <script src="{% static 'authenticate/bootstrap.min.js' %}"></script>
   </head>
   <body>
 
     <!-- Navbar -->
-    <div class="w3-bar w3-light-grey w3-border">
-      <a href="{% url 'index' %}" class="w3-bar-item w3-button w3-mobile">Home</a>
-      <span class="w3-right">
-      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button w3-mobile">Link 3</a>
-      <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Quick search..">
-      <button class="w3-bar-item w3-button w3-blue w3-mobile">Go</button>
-      </span>
-    </div>
-    <!-- Navbar end -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'authenticate/iom_crest.png' %}" alt="logo" style="width:40px;">
+      </a>
+
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </nav>
+     <!--Navbar end -->
 
     <!-- Login alert -->
-    <div class="w3-right">
+    <div>
       {% if user.is_authenticated %}
-      <p class="w3-padding-small">Logged in as: {{ user.username }} | <a href="{% url 'logout'%}">Logout</a></p>
+      <p>Logged in as: {{ user.username }} | <a href="{% url 'logout'%}">Logout</a></p>
       {% else %}
-      <p class="w3-padding-small">You're not logged in: <a href="{% url 'login' %}">Login</a></p>
+      <p>You're not logged in: <a href="{% url 'login' %}">Login</a></p>
       {% endif %}
     </div>
     <!-- Login alert end -->
