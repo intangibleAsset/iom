@@ -9,33 +9,43 @@
     {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'authenticate/bootstrap.min.css' %}">
-    <script src="{% static 'authenticate/jquery.min.js' %}"></script>
-    <script src="{% static 'authenticate/popper.min.js' %}"></script>
-    <script src="{% static 'authenticate/bootstrap.min.js' %}"></script>
+    <script src="{% static 'authenticate/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'authenticate/bootstrap.bundle.min.js' %}"></script>
   </head>
   <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark p-1">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="{% url 'index'%}">
-        <img src="{% static 'authenticate/iom_crest.png' %}" alt="logo" style="width:40px;">
-      </a>
-
-      <!-- Links -->
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">My shifts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Overtime</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Section shifts</a>
-        </li>
-      </ul>
+    <!-- Navigation -->
+    <!--
+    {% url 'index'%}
+    {% static 'authenticate/iom_crest.png' %}
+    -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container m-1 p-1">
+        <a class="navbar-brand" href="{% url 'index'%}">
+              <img src="{% static 'authenticate/iom_crest.png' %}" alt="logo" style="width:40px;">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Unused</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-     <!--Navbar end -->
+    <!-- Navbar end-->
 
     <!-- Login alert -->
     <div class="pr-1">
